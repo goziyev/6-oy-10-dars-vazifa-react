@@ -6,31 +6,47 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import { useEffect } from "react";
 import style from "./index.module.css";
 import heroImg from "../../assets/heroImg.png";
-import vector from "../../assets/Vector.svg";
+import { useTranslation } from "react-i18next";
+
 export const lightTheme = {
   body: "#fff",
   text: "black",
-  paragraph:" #6B6868",
+  paragraph: " #6B6868",
   borderColor: "black",
 };
 
 export const darkTheme = {
   body: "#363537",
   text: "#FAFAFA",
-  paragraph:"white",
+  paragraph: "white",
   borderColor: "white",
 };
 export default function Main() {
+  const [lang,setLang] = useState()
+const {t,i18n}   = useTranslation();
+
+
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     if (localStorage.getItem("theme")) {
       setTheme(localStorage.getItem("theme"));
+    }
+    if (localStorage.getItem('lang')) {
+      setLang(localStorage.getItem('lang'))
+      i18n.changeLanguage(localStorage.getItem('lang'))
     }
   }, []);
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
+
+
+  function handleChangeLang(e){
+    setLang(e.target.value)
+    i18n.changeLanguage(e.target.value)
+    localStorage.setItem('lang',e.target.value)
+  }
 
   return (
     <div id="mainPage" className={style.mainPage}>
@@ -41,19 +57,19 @@ export default function Main() {
             <nav className={style.nav}>
               <ul className={style.ul} id="buttonNav">
                 <li>
-                  <a href="#">About Me</a>
+                  <a href="#">{t("about")}</a>
                 </li>
                 <li>
-                  <a href="#">Skills</a>
+                  <a href="#">{t("skills")}</a>
                 </li>
                 <li>
-                  <a href="#">Project</a>
+                  <a href="#">{t("project")}</a>
                 </li>
                 <li>
-                  <a href="#">Contact</a>
+                  <a href="#">{t("contact")}</a>
                 </li>
                 <li>
-                  <select id="navbarSelect" className={style.select}>
+                  <select onChange={handleChangeLang} id="navbarSelect" className={style.select} value={lang}>
                     <option value="uz">Uz</option>
                     <option value="ru">Ru</option>
                     <option value="en">En</option>
@@ -79,17 +95,14 @@ export default function Main() {
           <div className={style.heroWrapper}>
             <div className={style.heroTexts}>
               <h3>
-                Hi <img src={vector} />, I’m Charles,
-                Front-end Developer
+              {t("hero-texts")}
               </h3>
               <p id="paragraph">
-                I design and develop experiences that make people’s lives
-                simpler through Web and Mobile apps.I work with FIgma , HTML5,
-                CSS3, JavaScript, React, ReactNative and Flutter.
+              {t("hero-desc")}
               </p>
               <div id="buttons" className={style.buttons}>
-                <button>HIRE ME</button>
-                <button>SEE MY PROJECTS</button>
+                <button>{t("hero-button")}</button>
+                <button>{t("hero-button-two")}</button>
               </div>
             </div>
             <div className={style.heroImg}>

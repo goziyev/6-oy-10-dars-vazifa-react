@@ -1,0 +1,38 @@
+{
+  "en": {
+    "translation": {
+      "about": "About Me",
+      "skills": "Skills",
+      "project": "Projects",
+      "contact": "Contact",
+      "hero-texts":"Hi 👋, I’m Charles, Front-end Developer",
+      "hero-desc":"I design and develop experiences that make people’s lives simpler through Web and Mobile apps.I work with FIgma , HTML5, CSS3, JavaScript, React, ReactNative and Flutter.",
+      "hero-button":"HIRE ME",
+      "hero-button-two":"SEE MY PROJECTS"
+    }
+  },
+  "ru": {
+    "translation": {
+      "about": "Обо мне",
+      "skills": "Hавыки",
+      "project": "Проекты",
+      "contact": "Контакт",
+      "hero-texts":"Привет 👋, я Чарльз, фронтенд-разработчик",
+      "hero-desc":"Я проектирую и разрабатываю решения, которые упрощают жизнь людей с помощью веб- и мобильных приложений. Я работаю с FIgma, HTML5, CSS3, JavaScript, React, ReactNative и Flutter.",
+      "hero-button":"НАЙМИ МЕНЯ",
+      "hero-button-two":"ПОСМОТРЕТЬ МОИ ПРОЕКТЫ"
+    }
+  },
+  "uz": {
+    "translation": {
+      "about": "Men haqimda",
+      "skills": "Ko'nikmalar",
+      "project": "Loyihalar",
+      "contact": "Bog'lanish",
+      "hero-texts":"Salom 👋, men Charlzman, front-end dasturchiman",
+      "hero-desc":"Men veb va mobil ilovalar orqali odamlarning hayotini osonlashtiradigan yechimlarni ishlab chiqaman va ishlab chiqaman. Men FIgma, HTML5, CSS3, JavaScript, React, ReactNative va Flutter bilan ishlayman.",
+      "hero-button":"Men bilan ishla",
+      "hero-button-two":"LOYIHALARIMNI KO‘RISH"
+    }
+  }
+}
